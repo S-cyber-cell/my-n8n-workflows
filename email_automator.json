@@ -1,0 +1,286 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -260,
+        -100
+      ],
+      "id": "dabb21da-8732-4f09-8cc4-bb48d43fb0c8",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "SHE2l6tPs6SrJiZ1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.text }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "sponsorship",
+              "description": "yt sponsorship emails are business enquiries related to brand"
+            },
+            {
+              "category": "high priority",
+              "description": "high priority includes words like urgent high priority emergency frequent limited !!!!"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -100
+      ],
+      "id": "4233bf33-6d02-4f82-bd49-f68c6e116a88",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        48,
+        120
+      ],
+      "id": "7bdb4e0f-9cc3-474b-b4c5-a6f9df972a78",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "uyzd2J1DxzVAcyq9",
+          "name": "OpenAi account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note->\ncheck for sponsorship emails or high priority email using text classifiers and ai ",
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -60,
+        -280
+      ],
+      "typeVersion": 1,
+      "id": "d8a8e4a9-6e75-450a-95b5-fcaac29ca294",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=u r asst of a youtuber ,\nur job is to respond the email received by  telling the sponsorship cost and negotiations and the flexibility and about ur punchuality the email to respond to is:\n {{ $('Gmail Trigger').item.json.text }}"
+            }
+          ]
+        },
+        "simplify": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        336,
+        -200
+      ],
+      "id": "a142f5d8-e482-48b7-b906-f6d100063fad",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "uyzd2J1DxzVAcyq9",
+          "name": "OpenAi account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "arnavbhatia1090@gmail.com",
+        "subject": "={{ $json.choices[0].message.content }}",
+        "emailType": "text",
+        "message": "={{ $json.choices[0].message.content }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        712,
+        -200
+      ],
+      "id": "63a88046-9d6a-4169-a8cf-62eeec478c63",
+      "name": "Gmail",
+      "webhookId": "ba661113-1216-45a6-aff2-49bb50ee1bdb",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "SHE2l6tPs6SrJiZ1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=ur assistant of a utuber ur job is to respond a high priority email as good as u can "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        340,
+        40
+      ],
+      "id": "47ddb41f-37fc-437d-9a4f-caef47bfe227",
+      "name": "OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "uyzd2J1DxzVAcyq9",
+          "name": "OpenAi account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "arnavbhatia1090@gmail.com",
+        "subject": "={{ $json.message.content }}",
+        "emailType": "text",
+        "message": "={{ $json.message.content }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        760,
+        40
+      ],
+      "id": "f6edf444-cf07-4c15-b354-62c51909c50d",
+      "name": "Gmail1",
+      "webhookId": "3f7f2c97-c82e-4fd0-a556-16c85a5ca342",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "SHE2l6tPs6SrJiZ1",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "OpenAI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "main": [
+        [
+          {
+            "node": "Gmail1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "21240690-b9f8-4b83-b060-707d16bb8083",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "47886fce199b83dd454c599552d1ee97b2ea73743a02cf2b6010365fba837e23"
+  },
+  "id": "wswCdvc25m7Xbn8c",
+  "tags": []
+}
