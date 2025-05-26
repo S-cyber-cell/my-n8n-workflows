@@ -115,3 +115,53 @@ This tool empowers professionals, analysts, and decision-makers to generate accu
 ![image](https://github.com/user-attachments/assets/39f56f41-3861-45df-b9a0-84499a6ac7f2)
 
 
+4)
+# 🤖 Telegram AI Assistant Bot using n8n + LangChain
+
+A smart, conversational **Telegram bot** built using [n8n](https://n8n.io) and [LangChain](https://www.langchain.com) to provide dynamic, context-aware responses powered by **LLMs (Large Language Models)**.
+
+This low-code AI agent allows you to automate workflows, answer questions, or perform custom tasks via Telegram — all from a natural language interface.
+
+---
+
+## 🚀 Features
+
+- 🧠 **Conversational AI Powered by LangChain**
+  - Supports GPT-4, Gemini, Claude, or Llama models
+  - Memory-enabled: Remembers context in multi-turn conversations
+  - Retrieval-Augmented Generation (RAG) for personalized answers
+
+- ⚙️ **No-Code Automation with n8n**
+  - Easily customize logic, triggers, and actions without writing backend code
+  - Integrates with 300+ n8n apps (Google Sheets, Notion, APIs, etc.)
+
+- 📲 **Telegram Integration**
+  - Communicate with your bot through a Telegram channel or DM
+  - Bot handles commands, questions, and task automation
+
+- 🔄 **Custom Workflows and Responses**
+  - Connect to external APIs
+  - Trigger reminders, generate reports, summarize documents, etc.
+
+---
+
+## 🧠 Use Case Examples
+
+- 📚 Q&A Bot: “Summarize this PDF I uploaded”
+- 📈 Report Bot: “Get me today’s sales from Google Sheets”
+- 🗓️ Reminder Bot: “Remind me to submit the report at 4 PM”
+- 🗃️ Document Assistant: “Search my Notion notes about product design”
+
+---
+
+## 🔧 Tech Stack
+
+- **n8n** – Workflow automation platform
+- **LangChain** – AI logic, memory, tools, RAG pipelines
+- **Telegram Bot API** – Messaging interface
+- **LLMs** – OpenAI / Gemini / Local LLMs (via API or self-hosted)
+- **Optional** – Vector DBs (e.g., FAISS, Pinecone, Chroma) for document retrieval
+
+---
+
+![image](https://github.com/user-attachments/assets/c5a0cbca-a30d-48ba-9319-ffc1f351dc27)
