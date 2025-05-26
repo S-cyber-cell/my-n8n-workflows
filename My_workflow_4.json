@@ -1,0 +1,246 @@
+{
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "05f84e9d-8516-4763-a5fb-12ce1512a57d",
+      "name": "When chat message received",
+      "webhookId": "2d174783-ea17-4866-9f92-974ed217eaee"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        252,
+        0
+      ],
+      "id": "2b1ab539-1c89-43a4-90aa-5295ded70383",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 3
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        380,
+        220
+      ],
+      "id": "975ceed6-f03b-4e70-8332-fd9f425e8d3d",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "10etmwN6PRh2jiiUhQx00Dg-5zyqpWppxfsxT400CkcM",
+          "mode": "list",
+          "cachedResultName": "Answer this question",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/10etmwN6PRh2jiiUhQx00Dg-5zyqpWppxfsxT400CkcM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 20061405,
+          "mode": "list",
+          "cachedResultName": "Answer this question",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/10etmwN6PRh2jiiUhQx00Dg-5zyqpWppxfsxT400CkcM/edit#gid=20061405"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        500,
+        220
+      ],
+      "id": "5c31dde8-16a9-4883-8241-a4311fa1d1fa",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "wanfHqzuKDsN5LAb",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "10etmwN6PRh2jiiUhQx00Dg-5zyqpWppxfsxT400CkcM",
+          "mode": "list",
+          "cachedResultName": "n8ntest",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/10etmwN6PRh2jiiUhQx00Dg-5zyqpWppxfsxT400CkcM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 20061405,
+          "mode": "list",
+          "cachedResultName": "Answer this question",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/10etmwN6PRh2jiiUhQx00Dg-5zyqpWppxfsxT400CkcM/edit#gid=20061405"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "Item Name"
+          ],
+          "schema": [
+            {
+              "id": "Item Name",
+              "displayName": "Item Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Quantity",
+              "displayName": "Quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "output",
+              "displayName": "output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        620,
+        0
+      ],
+      "id": "7d792d23-fb24-4ad2-beac-360e6f64eda1",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "wanfHqzuKDsN5LAb",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        220
+      ],
+      "id": "ed61fbbf-c4f4-4e4f-a635-8ea8087aea8a",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "uyzd2J1DxzVAcyq9",
+          "name": "OpenAi account 7"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8e630ea9-eb54-431d-8970-603bdeed36a8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "47886fce199b83dd454c599552d1ee97b2ea73743a02cf2b6010365fba837e23"
+  },
+  "id": "mhYDhIkDsqixk2AX",
+  "tags": []
+}
