@@ -80,5 +80,37 @@ This AI-powered agent helps you stay organized, responsive, and professional—w
 
 ![image](https://github.com/user-attachments/assets/688d996d-6417-4945-a861-fa58bb638fe5)
 
+3)
+
+# 💼 Financial Analysis AI Agent using RAG (Retrieval-Augmented Generation)
+
+An intelligent AI agent that performs **financial analysis** by combining the power of **Large Language Models (LLMs)** with **real-time data retrieval** using the **RAG (Retrieval-Augmented Generation)** architecture.
+
+This tool empowers professionals, analysts, and decision-makers to generate accurate, context-rich financial insights from both structured and unstructured data—automatically.
+
+---
+
+## 🚀 Features
+
+- 📊 **Automated Financial Report Generation**
+  - Summarizes earnings calls, balance sheets, and market news.
+  - Outputs executive summaries and actionable insights in seconds.
+
+- 🔍 **RAG-Enabled Retrieval**
+  - Fetches the latest financial data, news, and filings from internal databases or external APIs.
+  - Ensures LLMs are grounded in **factual and current** information.
+
+- 🧠 **Natural Language Q&A**
+  - Ask questions like “What caused Tesla’s stock to drop last quarter?” or “Summarize Apple’s revenue trends for the last 3 years.”
+  - AI answers with citations and references.
+
+- 🏦 **Multi-Source Data Integration**
+  - Pulls data from APIs (Yahoo Finance, SEC EDGAR, company websites), PDFs, CSVs, SQL databases, and more.
+
+- 🗂️ **Context-Aware Memory**
+  - Remembers past interactions in a session to refine analysis or answer follow-ups.
+  - Optional vector memory (e.g., FAISS, Chroma) support.
+
+![image](https://github.com/user-attachments/assets/74f42033-1e4c-4e6e-b32b-a1eccd08f4e9)
 
 
