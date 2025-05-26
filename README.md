@@ -29,3 +29,56 @@ An intelligent, conversational **inventory management system** built using **n8n
 
 
 2)
+# 📬 Email Automator AI Agent – Built with n8n
+
+An intelligent email response automation bot built using **n8n** to help professionals like **YouTubers, influencers, and creators** automatically manage and respond to **sponsorship** and **high-priority** emails.
+
+This AI-powered agent helps you stay organized, responsive, and professional—without spending hours in your inbox.
+
+---
+
+## 🚀 Features
+
+- 🤖 **Automated Email Responses**
+  - Instantly detects and replies to emails with keywords like "sponsorship", "collaboration", or "urgent".
+  - Supports fully customizable smart replies for sponsorship requests and high-priority emails.
+
+- 🧠 **AI-Enhanced Messaging**
+  - Generates personalized and professional replies using AI (e.g., OpenAI, Gemini, etc.).
+  - Understands intent and context before replying.
+
+- ⏱️ **Real-Time Email Monitoring**
+  - Continuously scans your inbox (e.g., Gmail, Outlook) using n8n’s email trigger nodes.
+  - Sends responses within seconds of receiving relevant messages.
+
+- 🛠️ **Built on n8n – No-Code Workflow Automation**
+  - Easy to set up, modify, and expand—no advanced coding required.
+  - Visual workflow builder for full transparency and control.
+
+---
+
+## 💼 Use Cases
+
+- **YouTubers & Influencers**  
+  Automatically handle sponsorship inquiries professionally even when you're busy shooting content.
+
+- **Freelancers & Small Business Owners**  
+  Never miss a high-priority email while you’re in meetings or working on projects.
+
+- **Brand Managers**  
+  Auto-respond to inbound collaborations or time-sensitive partner communication with consistent tone and branding.
+
+---
+
+## 🛠️ How It Works
+
+1. **Email Trigger** – Monitors your inbox via IMAP or Gmail.
+2. **Keyword Detection** – Checks subject and body for relevant keywords like "sponsorship", "urgent", "business inquiry".
+3. **AI Node (Optional)** – Uses an LLM to generate dynamic replies.
+4. **Send Email** – Automatically replies via SMTP/Gmail.
+5. **Logging (Optional)** – Saves all interactions to a spreadsheet, Notion, or database for records.
+
+![image](https://github.com/user-attachments/assets/688d996d-6417-4945-a861-fa58bb638fe5)
+
+
+
