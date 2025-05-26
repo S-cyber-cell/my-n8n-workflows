@@ -23,3 +23,4 @@ An intelligent, conversational **inventory management system** built using **n8n
 - **n8n** – Workflow automation engine.
 - **AI Agents** – For interpreting and responding to natural language queries.
 \
+![image](https://github.com/user-attachments/assets/1ac6567f-2e04-4fce-b02c-1aeb9a19b3df)
