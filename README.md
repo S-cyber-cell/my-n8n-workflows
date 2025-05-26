@@ -1,3 +1,4 @@
+1)
 # 🛒 AI-Powered Inventory Management Chatbot (Built with n8n)
 
 An intelligent, conversational **inventory management system** built using **n8n** and **AI agents**. This project lets you interact with your grocery inventory using natural language—no need to manually update spreadsheets or databases!
@@ -24,3 +25,7 @@ An intelligent, conversational **inventory management system** built using **n8n
 - **AI Agents** – For interpreting and responding to natural language queries.
 \
 ![image](https://github.com/user-attachments/assets/1ac6567f-2e04-4fce-b02c-1aeb9a19b3df)
+
+
+
+2)
