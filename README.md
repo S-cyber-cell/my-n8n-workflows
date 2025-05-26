@@ -112,5 +112,6 @@ This tool empowers professionals, analysts, and decision-makers to generate accu
   - Optional vector memory (e.g., FAISS, Chroma) support.
 
 ![image](https://github.com/user-attachments/assets/74f42033-1e4c-4e6e-b32b-a1eccd08f4e9)
+![image](https://github.com/user-attachments/assets/39f56f41-3861-45df-b9a0-84499a6ac7f2)
 
 
